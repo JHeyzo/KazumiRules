@@ -94,5 +94,29 @@
     "antiCrawlerEnabled": false,
     "author": "",
     "lastUpdate": 1794096000000
+  },
+  {
+    "name": "guangsu",
+    "version": "1.0",
+    "useNativePlayer": true,
+    "antiCrawlerEnabled": false,
+    "author": "",
+    "lastUpdate": 1794096000000
+  },
+  {
+    "name": "modu",
+    "version": "1.0",
+    "useNativePlayer": true,
+    "antiCrawlerEnabled": false,
+    "author": "",
+    "lastUpdate": 1794096000000
+  },
+  {
+    "name": "wujin",
+    "version": "1.0",
+    "useNativePlayer": true,
+    "antiCrawlerEnabled": false,
+    "author": "",
+    "lastUpdate": 1794096000000
   }
 ]
