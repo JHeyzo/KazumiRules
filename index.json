@@ -64,14 +64,6 @@
     "lastUpdate": 1794096000000
   },
   {
-    "name": "mgnacg",
-    "version": "1.2",
-    "useNativePlayer": true,
-    "antiCrawlerEnabled": false,
-    "author": "",
-    "lastUpdate": 1794096000000
-  },
-  {
     "name": "moonci",
     "version": "1.1",
     "useNativePlayer": true,
@@ -90,14 +82,6 @@
   {
     "name": "MXdm",
     "version": "2.4",
-    "useNativePlayer": true,
-    "antiCrawlerEnabled": false,
-    "author": "",
-    "lastUpdate": 1794096000000
-  },
-  {
-    "name": "sorani",
-    "version": "1.0",
     "useNativePlayer": true,
     "antiCrawlerEnabled": false,
     "author": "",
