@@ -110,5 +110,21 @@
     "antiCrawlerEnabled": false,
     "author": "",
     "lastUpdate": 1794096000000
+  },
+  {
+    "name": "ruyi",
+    "version": "1.0",
+    "useNativePlayer": true,
+    "antiCrawlerEnabled": false,
+    "author": "",
+    "lastUpdate": 1794096000000
+  },
+  {
+    "name": "maoyan",
+    "version": "1.0",
+    "useNativePlayer": true,
+    "antiCrawlerEnabled": false,
+    "author": "",
+    "lastUpdate": 1794096000000
   }
 ]
