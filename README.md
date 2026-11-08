@@ -37,7 +37,7 @@ https://raw.githubusercontent.com/JHeyzo/KazumiRules/main/
 
 DM84 的 `baseURL` 未改，仍是 `https://dmbus.cc/`——该站实测能打开。站内公告称永久网址是 `dm84.vip`、发布页是 `dm84.pro`，只写在这里备用，未验证过 `dm84.vip`，dmbus.cc 打不开时可再试。
 
-## 保留的 13 条规则及核查结果
+## 保留的 14 条规则及核查结果
 
 核查方法：2026-11-08 对每条规则的 baseURL（XPath 规则）和搜索 API 地址（API 规则）逐个用 browser.open 核查。标注说明：“搜索 API 已验证”指用 `wd=test` 等关键词实际调了接口并返回了正常 JSON；“仅首页可达，搜索未实测”指只打开了首页，未直接验证搜索接口（例如 POST 接口无法用 GET 核查）。
 
@@ -56,6 +56,7 @@ DM84 的 `baseURL` 未改，仍是 `https://dmbus.cc/`——该站实测能打�
 | MXdm | 首页 `www.dcc3.com` 可达，番剧列表正常。仅首页可达，搜索未实测。 |
 | xfdmnext | 首页 `next.xifanacg.com` 可达，番剧列表正常。搜索接口是 POST（`api.xifanacg.com`），无法用 GET 直接核查，仅首页可达，搜索未实测。 |
 | guangsu（光速资源） | MacCMS 采集站 API 规则：搜索 + 选集都是 API，`api.guangsuapi.com/api.php/provide/vod/`，已验证：搜“葬送的芙莉莲” total:2，选集 `ac=detail` 直接给 m3u8。两条线，选 `gsm3u8` 线（直链），别选 `gsyun` 云播线。字幕未证实（API 返回无字幕字段），待手机实测。 |
+| mdzy（魔都新域） | MacCMS 采集站 API 规则：魔都资源新域名 `www.mdzyapi.com/api.php/provide/vod/`（老域名 caiji.moduapi.cc 的 modu 规则已删），单条 `modum3u8` 线。已验证：搜“葬送的芙莉莲” total:2，S1 全 28 集；浏览器真放第 1 集能播，1080p，有烧进画面的中文字幕（对白纯中文，带“(沪)剧审字(2023)第0458号”），片头有烧进画面的赌博广告（582316.com）。 |
 
 ## 速度表（诚实标注局限）
 
@@ -63,7 +64,7 @@ browser.open 不返回每次请求的毫秒耗时，所以下面没有编出来�
 
 | 档 | 规则 | 测的是哪个地址 |
 | --- | --- | --- |
-| 快 | giriGiriLove、LMM、guangsu | 搜索 API 直接返回了正常 JSON |
+| 快 | giriGiriLove、LMM、guangsu、mdzy | 搜索 API 直接返回了正常 JSON |
 | 中 | 7sefun、AGE、akianime、baimao、DM84、ezdmw、moonci、MXdm、xfdmnext | 首页一次打开，列表正常 |
 | 慢，慎用 | mutefun | 首页是 13 天前缓存 + 自带反爬/验证码；7sefun 站内自述部分用户需挂梯 |
 | 失败，已删 | TvTFun、dalvdm、sorani、mgnacg、modu、wujin | 见上表删掉的原因 |
