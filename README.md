@@ -30,12 +30,14 @@ https://raw.githubusercontent.com/JHeyzo/KazumiRules/main/
 | dalvdm | 核查失败：首页 `www.sbdl.cc` 和搜索 API `index.php/ajax/suggest` 两次均返回 403（服务器有响应、域名可解析，但拒绝了核查方的访问）。这可能是反爬，不代表站已死，但无法核实可用，按“只推能用的”标准不推。 |
 | sorani | 2026-11-08 实机核查：搜得到，但选集 API 里 5 集的 `playUrl` 全空，播放页显示“暂无数据/请先登录”，站公告称部分地区无法播放，Kazumi 解析不到 m3u8，播不了。 |
 | mgnacg | 2026-11-08 实机核查：搜得到，但详情页地址打开是首页列表、无简介无选集，`sourceTemplate` 拼不出真正的详情页，Kazumi 抓不到播放列表，播不了。 |
+| modu（魔都资源） | 2026-11-08 实机核查：资源不全，删掉。 |
+| wujin（无尽资源） | 2026-11-08 实机核查：太卡，播不动，删掉。 |
 
 ## DM84 备用域名
 
 DM84 的 `baseURL` 未改，仍是 `https://dmbus.cc/`——该站实测能打开。站内公告称永久网址是 `dm84.vip`、发布页是 `dm84.pro`，只写在这里备用，未验证过 `dm84.vip`，dmbus.cc 打不开时可再试。
 
-## 保留的 15 条规则及核查结果
+## 保留的 13 条规则及核查结果
 
 核查方法：2026-11-08 对每条规则的 baseURL（XPath 规则）和搜索 API 地址（API 规则）逐个用 browser.open 核查。标注说明：“搜索 API 已验证”指用 `wd=test` 等关键词实际调了接口并返回了正常 JSON；“仅首页可达，搜索未实测”指只打开了首页，未直接验证搜索接口（例如 POST 接口无法用 GET 核查）。
 
@@ -54,8 +56,6 @@ DM84 的 `baseURL` 未改，仍是 `https://dmbus.cc/`——该站实测能打�
 | MXdm | 首页 `www.dcc3.com` 可达，番剧列表正常。仅首页可达，搜索未实测。 |
 | xfdmnext | 首页 `next.xifanacg.com` 可达，番剧列表正常。搜索接口是 POST（`api.xifanacg.com`），无法用 GET 直接核查，仅首页可达，搜索未实测。 |
 | guangsu（光速资源） | MacCMS 采集站 API 规则：搜索 + 选集都是 API，`api.guangsuapi.com/api.php/provide/vod/`，已验证：搜“葬送的芙莉莲” total:2，选集 `ac=detail` 直接给 m3u8。两条线，选 `gsm3u8` 线（直链），别选 `gsyun` 云播线。字幕未证实（API 返回无字幕字段），待手机实测。 |
-| modu（魔都资源） | MacCMS 采集站 API 规则：搜索 + 选集都是 API，`caiji.moduapi.cc/api.php/provide/vod/`，已验证：搜“葬送的芙莉莲” total:2，选集 `ac=detail` 单条 `modum3u8` 线直接给 m3u8。字幕未证实，待手机实测。 |
-| wujin（无尽资源） | MacCMS 采集站 API 规则：搜索 + 选集都是 API，`api.wujinapi.com/api.php/provide/vod/`，已验证：搜“葬送的芙莉莲” total:2，选集 `ac=detail` 单条 `wjm3u8` 线直接给 m3u8。字幕未证实，待手机实测。 |
 
 ## 速度表（诚实标注局限）
 
@@ -63,10 +63,10 @@ browser.open 不返回每次请求的毫秒耗时，所以下面没有编出来�
 
 | 档 | 规则 | 测的是哪个地址 |
 | --- | --- | --- |
-| 快 | giriGiriLove、LMM、guangsu、modu、wujin | 搜索 API 直接返回了正常 JSON |
+| 快 | giriGiriLove、LMM、guangsu | 搜索 API 直接返回了正常 JSON |
 | 中 | 7sefun、AGE、akianime、baimao、DM84、ezdmw、moonci、MXdm、xfdmnext | 首页一次打开，列表正常 |
 | 慢，慎用 | mutefun | 首页是 13 天前缓存 + 自带反爬/验证码；7sefun 站内自述部分用户需挂梯 |
-| 失败，已删 | TvTFun、dalvdm、sorani、mgnacg | 见上表删掉的原因 |
+| 失败，已删 | TvTFun、dalvdm、sorani、mgnacg、modu、wujin | 见上表删掉的原因 |
 
 重要：这个速度是在服务器侧测的，只能做相对排序，不能代表用户手机上走日本节点时的真实速度；最终以手机实测为准。
 
